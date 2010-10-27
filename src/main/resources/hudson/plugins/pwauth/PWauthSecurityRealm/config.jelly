@@ -1,0 +1,25 @@
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+  <f:entry title="${%whitelist}">
+     <f:textbox field="whitelist" help="/plugin/pwauth/whitelist.html" />
+  </f:entry>
+  <f:advanced>
+  	<f:section title="${%Advanced}">
+	  <f:entry title="${%pwauthPath}">
+	    <f:textbox field="pwauthPath" default="/usr/local/bin/pwauth" help="/plugin/pwauth/pwauth.html" />
+ 	  </f:entry>
+	  <f:entry title="${%grepPath}">
+	    <f:textbox field="grepPath" default="/bin/grep" />
+	  </f:entry>
+	  <f:entry title="${%idPath}">
+	    <f:textbox field="idPath" default="/usr/bin/id" />
+	  </f:entry>
+	  <f:entry title="${%groupsPath}">
+	    <f:textbox field="groupsPath" default="/usr/bin/groups" />
+	  </f:entry>
+	  <f:entry title="${%catPath}">
+	    <f:textbox field="catPath" default="/bin/cat" />
+	  </f:entry>
+	</f:section>
+  </f:advanced>
+  <f:validateButton method="test" title="${%Test}" with="pwauthPath,whitelist,idPath,groupsPath,catPath,grepPath" />
+</j:jelly>

@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.jvnet.hudson.plugins</groupId>
+		<artifactId>plugin</artifactId>
+		<version>1.382</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<name>PWauth Security Realm</name>
+	<artifactId>pwauth</artifactId>
+	<url>http://wiki.hudson-ci.org/display/HUDSON/pwauth</url>
+	<version>0.2-alpha</version>
+	<packaging>hpi</packaging>
+
+	<developers>
+		<developer>
+			<id>mallox</id>
+			<name>Ravi Gairola</name>
+			<email>mallox@pyxzl.net</email>
+			<url>http://www.pyxzl.net</url>
+			<timezone>1</timezone>
+		</developer>
+	</developers>
+
+	<repositories>
+		<repository>
+			<id>m.g.o-public</id>
+			<url>http://maven.glassfish.org/content/groups/public/</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>m.g.o-public</id>
+			<url>http://maven.glassfish.org/content/groups/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

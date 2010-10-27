@@ -1,0 +1,4 @@
+<div>
+  Dieses Plugin bietet Authentifizierung über <a href="http://code.google.com/p/pwauth/">pwauth</a> und unterstützt
+  Benutzer und Gruppen aus *nix Systemen via PAM.
+</div>
