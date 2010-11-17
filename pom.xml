@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.jvnet.hudson.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.383</version>
+		<version>1.384</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<name>PWauth Security Realm</name>
 	<artifactId>pwauth</artifactId>
 	<url>http://wiki.hudson-ci.org/display/HUDSON/pwauth</url>
-	<version>0.2</version>
+	<version>0.3-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 
 	<developers>

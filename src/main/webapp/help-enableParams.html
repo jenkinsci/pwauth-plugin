@@ -1,0 +1,12 @@
+<div>
+	You can enable authentication via a GET parameter, to allow automatic scripts to access the system without needing to
+	go through the standard authentication.<br />
+	Available parameters of authentication currently are:
+	<ul>
+		<li>for username: user, username, login</li>
+		<li>for password: pass, password, passwd, key</li>
+	</ul>
+	A request would then look like this: <code>http://hudson.server.url/jobs/MyJob/?user=MyUser&pass=MyPass</code>.<br />
+	<br />
+	WARNING: When using this method the password will not be encrypted and can be sniffed of the network by anyone listening in. 
+</div>

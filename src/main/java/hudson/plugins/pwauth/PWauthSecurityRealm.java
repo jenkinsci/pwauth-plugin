@@ -1,10 +1,9 @@
 package hudson.plugins.pwauth;
 
-import hudson.model.Descriptor;
 import hudson.security.AbstractPasswordBasedSecurityRealm;
 import hudson.security.GroupDetails;
-import hudson.security.SecurityRealm;
 import java.io.IOException;
+import javax.servlet.Filter;
 import javax.servlet.FilterConfig;
 import org.acegisecurity.AuthenticationException;
 import org.acegisecurity.GrantedAuthority;
@@ -14,7 +13,6 @@ import org.acegisecurity.userdetails.UserDetailsService;
 import org.acegisecurity.userdetails.UsernameNotFoundException;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.springframework.dao.DataAccessException;
-import javax.servlet.Filter;
 
 
 /** 
@@ -27,16 +25,18 @@ import javax.servlet.Filter;
 public class PWauthSecurityRealm extends AbstractPasswordBasedSecurityRealm {
 	public final String pwauthPath;
 	public final String whitelist;
+	public final boolean enableParamAuth;
 	public final String idPath;
 	public final String groupsPath;
 	public final String catPath;
 	public final String grepPath;
 	
 	@DataBoundConstructor
-	public PWauthSecurityRealm(final String pwauthPath, final String whitelist, final String idPath, final String groupsPath,
+	public PWauthSecurityRealm(final String pwauthPath, final String whitelist, final boolean enableParamAuth, final String idPath, final String groupsPath,
 		final String catPath, final String grepPath) {
 		this.pwauthPath = pwauthPath;
 		this.whitelist = whitelist;
+		this.enableParamAuth = enableParamAuth;
 		this.grepPath = grepPath;
 		this.catPath = catPath;
 		this.groupsPath = groupsPath;
@@ -107,6 +107,6 @@ public class PWauthSecurityRealm extends AbstractPasswordBasedSecurityRealm {
 	
 	@Override
 	public Filter createFilter(FilterConfig filterConfig) {
-		return new PWauthFilter(super.createFilter(filterConfig), this.whitelist);
+		return new PWauthFilter(super.createFilter(filterConfig), this);
 	}
 }

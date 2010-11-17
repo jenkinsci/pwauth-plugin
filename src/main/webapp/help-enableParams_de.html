@@ -1,0 +1,12 @@
+<div>
+	Durch diese Einstellung wird die Athentifizierung via GET Paramtere aktiviert, mit welcher man auf das System zugreifen
+	kann, ohne dass die Standard Authentifizierung durchlaufen werden muss.<br />
+	Als parameter sind zurzeit verfügbar:
+	<ul>
+		<li>als Benutzer: user, username, login</li>
+		<li>als Password: pass, password, passwd, key</li>
+	</ul>
+	Ein Request and den Server würde so aussehen: <code>http://hudson.server.url/jobs/MyJob/?user=MyUser&pass=MyPass</code>.<br />
+	<br />
+	ACHTUNG: Das Passwort wird bei dieser Methode unverschlüsselt verschickt und kann abgehört werden. 
+</div>

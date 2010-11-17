@@ -1,11 +1,14 @@
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
-  <f:entry title="${%whitelist}">
-     <f:textbox field="whitelist" help="/plugin/pwauth/whitelist.html" />
+  <f:entry title="${%whitelist}" help="/plugin/pwauth/help-whitelist.html">
+     <f:textbox field="whitelist"/>
+  </f:entry>
+  <f:entry title="${%enableParams}" help="/plugin/pwauth/help-enableParams.html">
+  	<f:checkbox field="enableParamAuth"/>
   </f:entry>
   <f:advanced>
   	<f:section title="${%Advanced}">
-	  <f:entry title="${%pwauthPath}">
-	    <f:textbox field="pwauthPath" default="/usr/local/bin/pwauth" help="/plugin/pwauth/pwauth.html" />
+	  <f:entry title="${%pwauthPath}" help="/plugin/pwauth/help-pwauth.html">
+	    <f:textbox field="pwauthPath" default="/usr/local/bin/pwauth"/>
  	  </f:entry>
 	  <f:entry title="${%grepPath}">
 	    <f:textbox field="grepPath" default="/bin/grep" />
