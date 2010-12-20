@@ -70,11 +70,15 @@ class PWauthFilter implements Filter {
 		return null;
 	}
 
-	private void grantAccess(final HttpServletRequest request, final ServletResponse response, final FilterChain chain) throws IOException,
-		ServletException {
+	private void grantAccess(final HttpServletRequest request, final ServletResponse response, final FilterChain chain) throws ServletException {
 		AuthorizationStrategy strategy = Hudson.getInstance().getAuthorizationStrategy();
 		Hudson.getInstance().setAuthorizationStrategy(AuthorizationStrategy.UNSECURED);
-		this.superFilter.doFilter(request, response, chain);
+		try {
+			this.superFilter.doFilter(request, response, chain);
+		} catch (Exception e) {
+			Hudson.getInstance().setAuthorizationStrategy(strategy);
+			throw new ServletException(e);
+		}
 		Hudson.getInstance().setAuthorizationStrategy(strategy);
 	}
 	
