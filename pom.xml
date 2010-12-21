@@ -11,7 +11,7 @@
 	<name>PWauth Security Realm</name>
 	<artifactId>pwauth</artifactId>
 	<url>http://wiki.hudson-ci.org/display/HUDSON/pwauth</url>
-	<version>0.4</version>
+	<version>0.5-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 
 	<developers>
@@ -43,11 +43,5 @@
         <id>java.net-m2-repository</id>
         <url>http://maven.hudson-labs.org/content/repositories/releases/</url>
       </repository>
-    </distributionManagement> 	
-
-  <scm>
-    <connection>scm:svn:https://guest@svn.java.net/svn/hudson~svn/tags/pwauth-0.4</connection>
-    <developerConnection>scm:svn:https://svn.java.net/svn/hudson~svn/tags/pwauth-0.4</developerConnection>
-    <url>https://svn.java.net/svn/hudson~svn/tags/pwauth-0.4</url>
-  </scm>
+    </distributionManagement>
 </project>
