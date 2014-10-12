@@ -1,16 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.jvnet.hudson.plugins</groupId>
-		<artifactId>plugin</artifactId>
-		<version>1.389</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>1.509.1</version>
+    </parent>
 
 	<name>PWauth Security Realm</name>
 	<artifactId>pwauth</artifactId>
-	<url>http://wiki.hudson-ci.org/display/HUDSON/pwauth</url>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/pwauth</url>
 	<version>0.5-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 
@@ -23,6 +22,12 @@
 			<timezone>1</timezone>
 		</developer>
 	</developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/jenkinsci/pwauth-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:jenkinsci/pwauth-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/pwauth-plugin</url>
+    </scm>
 
 	<repositories>
 		<repository>
@@ -37,11 +42,11 @@
 			<url>http://repo.jenkins-ci.org/public/</url>
 		</pluginRepository>
 	</pluginRepositories>
-	
-	<distributionManagement>
-      <repository>
-        <id>java.net-m2-repository</id>
-        <url>http://maven.hudson-labs.org/content/repositories/releases/</url>
-      </repository>
+
+    <distributionManagement>
+        <repository>
+            <id>maven.jenkins-ci.org</id>
+            <url>http://maven.jenkins-ci.org:8081/content/repositories/releases/</url>
+        </repository>
     </distributionManagement>
 </project>
