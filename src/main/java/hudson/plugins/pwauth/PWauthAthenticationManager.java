@@ -9,6 +9,7 @@ import org.acegisecurity.BadCredentialsException;
 import org.acegisecurity.GrantedAuthority;
 import org.acegisecurity.GrantedAuthorityImpl;
 import org.acegisecurity.providers.UsernamePasswordAuthenticationToken;
+import org.acegisecurity.userdetails.User;
 
 public class PWauthAthenticationManager implements AuthenticationManager {
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -24,7 +25,8 @@ public class PWauthAthenticationManager implements AuthenticationManager {
 	            int i=0;
 	            for (String g : groups)
 	            	authoroties[i++] = new GrantedAuthorityImpl(g);
-	        	return new UsernamePasswordAuthenticationToken(username, password, authoroties);
+				User user = new User(username, "",  true, true, true, true, authoroties);
+				return new UsernamePasswordAuthenticationToken(user, "", authoroties);
 	        }
         } catch (IOException e) {
         	throw new BadCredentialsException("Can't read system password. Access Denied!", e);        	
